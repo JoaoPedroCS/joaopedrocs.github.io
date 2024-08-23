@@ -393,6 +393,7 @@ header {
 
 .portfolio-item {
     background: var(--clr-dark);
+    overflow: hidden;
 }
 
 .portfolio-img {
