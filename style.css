@@ -410,8 +410,8 @@ header {
 
 .portfolio-img:hover,
 .portfolio-item:focus .portfolio-img {
-    transform: scale(1.1);
-    opacity: .8;
+    transform: scale(1.2);
+    opacity: .6;
 }
 
 
