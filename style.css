@@ -13,7 +13,7 @@
     --fw-reg: 300;
     --fw-bold: 900;
     
-    --clr-light: #303030;
+    --clr-light: #1e1e1e;
     --clr-dark: #fff;
     --clr-accent: #f46e00;
     
@@ -254,6 +254,7 @@ header {
 
 .section-subtitle-intro {
     display: inline-block;
+    color: var(--clr-light);
 }
 
 @media (min-width: 600px) {
@@ -291,26 +292,26 @@ header {
 /*  My services section  */
 
 .my-services {
-    background-color: var(--clr-dark);
+    background-color: var(--clr-accent);
     background-image: url(assets/HD-wallpaper-computer-code-la-lang-programming-sad-software.jpg);
     background-size: cover;
     background-blend-mode: multiply;
-    color: var(--clr-light);
+    color: var(--clr-dark);
     text-align: center;
 }
 
 .section-title-services {
-    color: var(--clr-accent);
+    color: var(--clr-dark);
     position: relative;
 }
 
 .section-title-services::after {
     content: '';
     display: block;
-    width: 2em;
-    height: 1px;
+    width: 3em;
+    height: 2px;
     margin: 0.5em auto 1em;
-    background: var(--clr-light);
+    background: var(--clr-dark);
     opacity: 0.25;
 }
 
@@ -340,6 +341,12 @@ header {
 .about-me {
     max-width: 1000px;
     margin: 0 auto;
+    background-color: var(--clr-dark);
+    color: var(--clr-light);
+}
+
+.section-subtitle-about {
+    color: var(--clr-dark);
 }
 
 .about-me-img {
@@ -381,18 +388,21 @@ header {
 /* My Work */
 
 .my-work {
-    background-color: var(--clr-dark);
-    color: var(--clr-light);
+    background-color: var(--clr-light);
+    color: var(--clr-accent);
     text-align: center;    
 }
 
+.section-subtitle-work {
+    color: var(--clr-dark);
+}
 .portfolio {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
 }
 
 .portfolio-item {
-    background: var(--clr-dark);
+    background: var(--clr-accent);
     overflow: hidden;
 }
 
@@ -411,7 +421,7 @@ header {
 .portfolio-img:hover,
 .portfolio-item:focus .portfolio-img {
     transform: scale(1.2);
-    opacity: .6;
+    opacity: .4;
 }
 
 
