@@ -13,9 +13,9 @@
     --fw-reg: 300;
     --fw-bold: 900;
     
-    --clr-light: #fff;
-    --clr-dark: #303030;
-    --clr-accent: #16e0bd;
+    --clr-light: #303030;
+    --clr-dark: #fff;
+    --clr-accent: #f46e00;
     
     --fs-h1: 3rem;
     --fs-h2: 2.25rem;
@@ -140,13 +140,13 @@ header {
 }
 
 .logo {
-    max-width: 100px;
+    max-width: 150px;
 }
 
 .nav {
     position: fixed;
     background: var(--clr-dark);
-    color: var(--clr-light);
+    color: var(--clr-accent);
     top: 0;
     bottom: 0;
     left: 0;
@@ -292,7 +292,7 @@ header {
 
 .my-services {
     background-color: var(--clr-dark);
-    background-image: url(assets/services-bg.jpg);
+    background-image: url(assets/HD-wallpaper-computer-code-la-lang-programming-sad-software.jpg);
     background-size: cover;
     background-blend-mode: multiply;
     color: var(--clr-light);
