@@ -42,7 +42,7 @@ html {
 }
 
 body {
-    background: var(--clr-light);
+    background: #111;
     color: var(--clr-dark);
     margin: 0;
     font-family: var(--ff-primary);
@@ -137,6 +137,7 @@ header {
     display: flex;
     justify-content: space-between;
     padding: 1em;
+    z-index: 1000;
 }
 
 .logo {
@@ -245,7 +246,9 @@ header {
 /*  Intro section  */
 
 .intro {
+    box-shadow: -10px 8px 10px rgba(0, 0, 0, 0.5), 10px 8px 10px rgba(0, 0, 0, 0.5);
     position: relative;
+    background-color: var(--clr-light);
 }
 
 .intro-img {
@@ -298,6 +301,7 @@ header {
     background-blend-mode: multiply;
     color: var(--clr-dark);
     text-align: center;
+    z-index: 3;
 }
 
 .section-title-services {
@@ -339,10 +343,11 @@ header {
 
 
 .about-me {
+    box-shadow: -10px 8px 10px rgba(0, 0, 0, 0.5), 10px 8px 10px rgba(0, 0, 0, 0.5);
     max-width: 1000px;
     margin: 0 auto;
-    background-color: var(--clr-dark);
-    color: var(--clr-light);
+    background-color: var(--clr-light);
+    color: var(--clr-dark);
 }
 
 .section-subtitle-about {
@@ -388,15 +393,16 @@ header {
 /* My Work */
 
 .my-work {
-    background-color: var(--clr-light);
+    background-color: var(--clr-dark);
     color: var(--clr-accent);
     text-align: center;    
 }
 
 .section-subtitle-work {
-    color: var(--clr-dark);
+    color: var(--clr-light);
 }
 .portfolio {
+    box-shadow: var(--bs);
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
 }
