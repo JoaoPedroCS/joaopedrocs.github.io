@@ -6,12 +6,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/7.0.0/normalize.min.css" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.css"
-        integrity="sha256-46qynGAkLSFpVbEBog43gvNhfrOj+BmwXdxFgVK/Kvc=" crossorigin="anonymous" />
+        integrity="sha256-46qynGAkLSFpVbEBog49gvNhfrOj+BmwXdxFgVK/Kvc=" crossorigin="anonymous" />
     <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="calcdir/calc.css" />
     <link rel="icon" href="image (1).png" type="image/png" />
     <script src="https://kit.fontawesome.com/f057b59170.js" crossorigin="anonymous"></script>
     <link href="https://fonts.googleapis.com/css?family=Source+Code+Pro:400,900|Source+Sans+Pro:300,900&display=swap"
         rel="stylesheet" />
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300&display=swap" rel="stylesheet">
     <title>Portfolio</title>
     <link rel="icon" type="image/png" href="/assets/favicon.png">
 </head>
@@ -42,6 +46,31 @@
         <img src="assets/calcimg.png" alt="a picture of Jane Smith smiling" class="intro-img">
     </section>
 
+    <div class="calculator">
+        <input type="text" class="display" id="display" disabled>
+        <div class="buttons">
+            <button class="btnc btn-tops" onclick="clearDisplay()">AC</button>
+            <button class="btnc btn-tops" onclick="negative()">+/-</button>
+            <button class="btnc btn-tops" onclick="performOperation('%')">%</button>
+            <button id="/" class="btnc btn-operation" onclick="performOperation('/')">÷</button>
+            <button class="btnc btn-number" onclick="appendNumber('7')">7</button>
+            <button class="btnc btn-number" onclick="appendNumber('8')">8</button>
+            <button class="btnc btn-number" onclick="appendNumber('9')">9</button>
+            <button id="*" class="btnc btn-operation" onclick="performOperation('*')">×</button>
+            <button class="btnc btn-number" onclick="appendNumber('4')">4</button>
+            <button class="btnc btn-number" onclick="appendNumber('5')">5</button>
+            <button class="btnc btn-number" onclick="appendNumber('6')">6</button>
+            <button id="-" class="btnc btn-operation" onclick="performOperation('-')">-</button>
+            <button class="btnc btn-number" onclick="appendNumber('1')">1</button>
+            <button class="btnc btn-number" onclick="appendNumber('2')">2</button>
+            <button class="btnc btn-number" onclick="appendNumber('3')">3</button>
+            <button id="+" class="btnc btn-operation" onclick="performOperation('+')">+</button>
+            <button class="btnc btn-number btn-zero" onclick="appendNumber('0')">0</button>
+            <button class="btnc btn-dot" onclick="performOperation('.')">,</button>
+            <button class="btnc btn-operation" onclick="calculateResult()">=</button>
+        </div>
+    </div>
+
     <div class="portfolio-item-individual">
         <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Vel officia dolorum accusamus ea unde quos eaque?
             Autem sequi quas est neque voluptatem exercitationem harum quasi eveniet iste? Perferendis, rem numquam.</p>
@@ -49,9 +78,8 @@
         <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. A sequi libero molestiae cumque perspiciatis
             deleniti voluptas, dolorum placeat iusto earum magnam, omnis voluptatibus maiores repellendus. Id, illum.
             Temporibus, eum odio.</p>
-        <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Consectetur et culpa, itaque laborum provident sed
-            sapiente commodi consequuntur fugit illo quibusdam fugiat harum sit, magni quo ad deserunt temporibus at?
-        </p>
+        
+
     </div>
 
     <!-- Footer -->
@@ -83,6 +111,7 @@
 
 
     <script src="index.js"></script>
+    <script src="calcdir/calc.js"></script>
 
 </body>
 

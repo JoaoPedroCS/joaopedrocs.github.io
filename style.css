@@ -408,8 +408,22 @@ header {
 }
 
 .portfolio-item {
+    position: relative;
     background: var(--clr-accent);
     overflow: hidden;
+}
+
+.portfolio-text {
+    position: absolute;
+    bottom: 10px;  /* Altere conforme necessário */
+    left: 10px;    /* Altere conforme necessário */
+    color: var(--clr-dark);
+    background: rgba(0, 0, 0, 0.5);  /* Fundo semitransparente */
+    padding: 5px 10px;
+    font-size: 1.2rem;
+    font-weight: var(--fw-bold);
+    transition: opacity 0.3s ease-in-out;
+    opacity: 1;
 }
 
 .portfolio-img {
