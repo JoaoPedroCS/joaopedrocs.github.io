@@ -7,7 +7,6 @@ let selectedOperatorButton = null;
 display.value = currentInput
 
 
-
 function appendNumber(number) {
     if (currentInput === '0') {
         currentInput = number;
