@@ -55,12 +55,16 @@
 }
 
 .btn-dot {
-    background-color: rgb(68, 68, 70);
+    background-color: rgb(69, 69, 69);
 }
-
+.btn-dot:active {
+    background-color: rgb(120, 120, 120);
+}
 .btn-number {
-    background-color: rgb(68, 68, 70);
-
+    background-color: rgb(69, 69, 69);
+}
+.btn-number:active {
+    background-color: rgb(120, 120, 120);
 }
 
 .btn-tops {
@@ -69,16 +73,24 @@
     font-weight: 1000;
     background-color: rgb(169, 169, 169);
 }
+.btn-tops:active {
+    background-color: rgb(213, 213, 213);
+}
 
 .btn-operation {
     font-size: 2.4em;
     font-weight: 500;
     background-color: rgb(255, 149, 0);
 }
-
+.btn-operation:active {
+    background-color: rgb(255, 178, 70);
+}
 .btn-operator-selected {
     background-color: white;
     font-size: 2.4em;
     font-weight: 500;
     color: rgb(255, 149, 0);
+}
+.btn-operator-selected:active {
+    background-color: rgb(255, 197, 115);
 }
