@@ -1,7 +1,7 @@
 let display = document.getElementById('display');
 let firstinput = '0';
 let secondinput = '';
-let answer = '0;'
+let answer = '0';
 let operator = '';
 let selectedOperatorButton = null;
 let txt = 'ac';
@@ -54,24 +54,13 @@ function performOperation(x) {
     }
 }
 
-function highlightOperatorButton(operator) {
-    if (selectedOperatorButton) {
-        selectedOperatorButton.classList.remove('btn-operator-selected');
-    }
-
-    selectedOperatorButton = document.getElementById(operator);
-    selectedOperatorButton.classList.add('btn-operator-selected');
-}
-
 function clearDisplay() {
     if (txt === 'ac') {
         firstinput = '0';
         secondinput = '';
         display.value = firstinput;
-        if (selectedOperatorButton) {
-            selectedOperatorButton.classList.remove('btn-operator-selected');
-            selectedOperatorButton = null;
-        }
+        selectedOperatorButton.classList.remove('btn-operator-selected');
+        selectedOperatorButton = null;
     } else if (!selectedOperatorButton) {
         firstinput = '0';
         display.value = firstinput;
@@ -86,14 +75,10 @@ function clearDisplay() {
 
 }
 
-function toC() {
-    document.getElementById("ac").textContent="C";
-    txt = 'c';
+function negative() {
+    
 }
-function toAC() {
-    document.getElementById("ac").textContent="AC";
-    txt = 'ac';
-}
+
 
 function calculateResult() {
     try {
@@ -109,31 +94,57 @@ function calculateResult() {
                     if (secondinput === '0') throw new Error('Error');
                     answer = String(Number(firstinput) / Number(secondinput));
                 }
-                selectedOperatorButton.classList.remove('btn-operator-selected');
-                selectedOperatorButton = null;
                 firstinput = answer
+                if (selectedOperatorButton) {
+                    selectedOperatorButton.classList.remove('btn-operator-selected');
+                }
             } else {
+                secondinput = firstinput
                 if (operator === '+') {
-                    answer = String(Number(firstinput) + Number(firstinput));
+                    answer = String(Number(firstinput) + Number(secondinput));
                 } else if (operator === '-') {
-                    answer = String(Number(firstinput) - Number(firstinput));
+                    answer = String(Number(firstinput) - Number(secondinput));
                 } else if (operator === '*') {
-                    answer = String(Number(firstinput) * Number(firstinput));
+                    answer = String(Number(firstinput) * Number(secondinput));
                 } else if (operator === '/') {
                     if (secondinput === '0') throw new Error('Error');
-                    answer = String(Number(firstinput) / Number(firstinput));
+                    answer = String(Number(firstinput) / Number(secondinput));
                 }
+                firstinput = answer
                 selectedOperatorButton.classList.remove('btn-operator-selected');
             }
-            display.value = firstinput;
+            display.value = answer;
         } else {
-            display.value = firstinput
+            display.value = firstinput;
+        }
+
+        if (selectedOperatorButton) {
+            selectedOperatorButton = null
         }
         
     } catch (error) {
-        display.value = 'Erroor';
+        display.value = 'Error';
         answer = '0';
         firstinput = '0';
+        secondinput = '0';
         operator = '';
     }
+}
+
+function highlightOperatorButton(operator) {
+    if (selectedOperatorButton) {
+        selectedOperatorButton.classList.remove('btn-operator-selected');
+    }
+
+    selectedOperatorButton = document.getElementById(operator);
+    selectedOperatorButton.classList.add('btn-operator-selected');
+}
+
+function toC() {
+    document.getElementById("ac").textContent="C";
+    txt = 'c';
+}
+function toAC() {
+    document.getElementById("ac").textContent="AC";
+    txt = 'ac';
 }
