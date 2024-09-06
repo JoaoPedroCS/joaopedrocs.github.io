@@ -4,10 +4,12 @@
 }
 .calculator {
     font-family: 'Inter', sans-serif;
-    height: 700px;
-    max-width: 400px;
+    width: 100%; /* Ajuste para ocupar toda a largura da tela */
+    max-width: 350px; /* Largura de um telefone médio */
+    height: auto;
     margin: 30px auto;
-    border-radius: 20px;
+    padding: 15px;
+    border-radius: 30px;
     display: grid;
     grid-template-columns: auto;
     background-color: black;
@@ -17,41 +19,99 @@
 }
 
 .display {
-    font-size: 3.4em;
+    font-size: 2.5em;
     height: 100px;
-    width: 310px;
-    padding: 0 20px 0 20px;
-    margin-bottom: 10px;
+    width: 295px;
+    padding-right: 15px;
+    padding-top: 30px;
     background-color: black;
     grid-column: span 4;
     text-align: end;
+    border-radius: 20px;
 }
 
 .buttons {
     display: grid;
-    margin-bottom: 40px;
-    grid-template-columns: repeat(4, auto);
+    grid-template-columns: repeat(4, 1fr);
     grid-template-rows: repeat(5, auto);
-    justify-content: center;
     gap: 10px;
-}
-
-.btnc:active {
-    background-color: crimson;
+    justify-content: center;
 }
 
 .btnc {
     font-size: 1.8em;
-    height: 80px;
-    width: 80px;
-    border-radius: 50%;
+    height: 70px;
+    width: 70px;
+    border-radius: 50%; /* Botões arredondados */
     text-align: center;
+}
+
+
+
+
+.btn-operation, .btn-tops, .btn-number, .btn-dot {
+    border-radius: 50%; /* Aplicando o arredondamento */
+}
+.btn-zero {
+    grid-column: span 2;
+    width: 100%;
+    border-radius: 35px;
+}
+
+@media (max-width: 600px) {
+    .calculator {
+        height: 500px;
+        max-width: 300px;
+        padding: 15px;
+    }
+
+    .display {
+        font-size: 2.5em;
+        height: 80px;
+        width: 295px;
+        padding-right: 15px;
+        padding-top: 30px;
+    }
+
+    .btnc {
+        font-size: 1.6em;
+        height: 70px;
+        width: 70px;
+    }
+
+    .btn-zero {
+        width: 100%;
+        border-radius: 35px;
+    }
+}
+
+@media (min-width: 1024px) {
+    .calculator {
+        width: 350px;
+    }
+
+    .display {
+        font-size: 3em;
+        width: 335px;
+        height: 80px;
+        padding-right: 15px;
+        padding-top: 30px;
+    }
+
+    .btnc {
+        font-size: 2em;
+        height: 80px;
+        width: 80px;
+    }
+
+    .btn-zero {
+        border-radius: 40px;
+    }
 }
 
 .btn-zero {
     grid-column: span 2;
-    width: 170px;
-    border-radius: 40px;
+    width: 100%;
 }
 
 .btn-dot {
