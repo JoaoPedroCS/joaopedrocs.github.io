@@ -1,19 +1,21 @@
 let display = document.getElementById('display');
-let firstInput = '0';
-let secondInput = '';
+let firstinput = '0';
+let secondinput = '';
 let operator = '';
 let selectedOperatorButton = null;
 
-display.value = currentInput
+display.value = firstInput
 
 
 function appendNumber(number) {
-    if (currentInput === '0') {
-        currentInput = number;
-    } else {
+    if (!selectedOperatorButton && firstinput === '0') {
+        firstinput = number;
+        display.value = firstinput;
+    } else if (){
         currentInput += number
     }
-    display.value = currentInput;
+    if (selectedOperatorButton) {}
+    
 }
 
 function performOperation(operator) {
