@@ -1,6 +1,6 @@
 let display = document.getElementById('display');
-let currentInput = '0';
-let previousInput = '';
+let firstInput = '0';
+let secondInput = '';
 let operator = '';
 let selectedOperatorButton = null;
 
