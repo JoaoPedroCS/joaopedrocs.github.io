@@ -4,8 +4,7 @@ let secondinput = '';
 let operator = '';
 let selectedOperatorButton = null;
 
-display.value = firstInput
-
+display.value = firstinput
 
 function appendNumber(number) {
     if (!selectedOperatorButton && firstinput === '0') {
