@@ -154,3 +154,12 @@
 .btn-operator-selected:active {
     background-color: rgb(255, 197, 115);
 }
+
+.calc-link {
+    color: rgb(255, 149, 0);
+    text-decoration: none;
+}
+
+.calc-link:hover {
+    text-decoration: underline;
+}
