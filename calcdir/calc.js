@@ -2,27 +2,33 @@ let display = document.getElementById('display');
 let firstinput = '0';
 let secondinput = '';
 let answer = '0';
-let operator = '';
+let selectedoperator = '';
 let selectedOperatorButton = null;
 let txt = 'ac';
+let stage = 1;
+let decimaltimes = 0
+let firstInt = 0
+let secondInt = 0
+let summrounding = 0
+
 
 display.value = firstinput;
 
 function appendNumber(number) {
-    if (!selectedOperatorButton && firstinput === '0') {
+    if (stage === 1 && firstinput === '0') {
         firstinput = number;
         display.value = firstinput; 
         if (number != '0') {
             toC();
         }
-    } else if (!selectedOperatorButton){
+    } else if (stage === 1){
         firstinput += number;
         display.value = firstinput;
-    } else if (selectedOperatorButton && secondinput === '') {
+    } else if (stage === 2 && secondinput === '') {
         secondinput = number;
         display.value = secondinput;
         selectedOperatorButton.classList.remove('btn-operator-selected');
-    } else if (selectedOperatorButton && secondinput != '') {
+    } else if (stage === 2 && secondinput != '') {
         if (secondinput != '0') {
             secondinput += number;
             display.value = secondinput;
@@ -35,23 +41,19 @@ function appendNumber(number) {
 }
 
 function performOperation(x) {
-    if (!selectedOperatorButton && secondinput === '') {
+    if (stage === 1) {
         operator = x;
         highlightOperatorButton(x);
-    } else if(!selectedOperatorButton && secondinput != '') {
+        secondinput = ''
+    } else if(stage === 2 && secondinput === '') {
         operator = x;
         highlightOperatorButton(x);
-        secondinput = '0'
-        firstinput = answer
-    } else if (selectedOperatorButton && secondinput === '') {
+    } else if (stage === 2 && secondinput != '') {
+        calculateResult();
         operator = x;
         highlightOperatorButton(x);
-    } else if (selectedOperatorButton && secondinput != '') {
-        calculateResult()
-        operator = x;
-        highlightOperatorButton(x);
-
     }
+    stage = 2;
 }
 
 function clearDisplay() {
@@ -61,35 +63,35 @@ function clearDisplay() {
         display.value = firstinput;
         selectedOperatorButton.classList.remove('btn-operator-selected');
         selectedOperatorButton = null;
-    } else if (!selectedOperatorButton) {
+        stage = 1;
+    } else if (stage === 1) {
         firstinput = '0';
         display.value = firstinput;
         toAC();
-    } else if (selectedOperatorButton) {
+    } else if (stage === 2) {
         secondinput = '0';
         display.value = secondinput;
-        toAC();
         selectedOperatorButton.classList.add('btn-operator-selected');
+        toAC();
     }
-
-
 }
-
-function negative() {
-    
-}
-
 
 function calculateResult() {
     try {
-        if (operator != '') {
+        if (secondinput != '' && operator != '') {stage = 2}
+        if (stage === 2) {
+            firstInt = parseInt(firstinput.toString().replace('.', ''))
+            secondInt = parseInt(secondinput.toString().replace('.', ''))
+            if ((firstInt/firstinput)>=(secondInt/secondinput)){summrounding = (firstInt/firstinput)}else{summrounding = (secondInt/secondinput)}
+            decimaltimes = firstInt/Number(firstinput);
+            decimaltimes *= secondInt/Number(secondinput);
             if (secondinput != '') {
                 if (operator === '+') {
-                    answer = String(Number(firstinput) + Number(secondinput));
+                    answer = String((Number(firstinput)*summrounding + Number(secondinput)*summrounding)/summrounding);
                 } else if (operator === '-') {
-                    answer = String(Number(firstinput) - Number(secondinput));
+                    answer = String((Number(firstinput)*summrounding - Number(secondinput)*summrounding)/summrounding);
                 } else if (operator === '*') {
-                    answer = String(Number(firstinput) * Number(secondinput));
+                    answer = String(Number(firstInt) * Number(secondInt) / decimaltimes);
                 } else if (operator === '/') {
                     if (secondinput === '0') throw new Error('Error');
                     answer = String(Number(firstinput) / Number(secondinput));
@@ -113,7 +115,8 @@ function calculateResult() {
                 firstinput = answer
                 selectedOperatorButton.classList.remove('btn-operator-selected');
             }
-            display.value = answer;
+            display.value = firstinput;
+            stage = 1
         } else {
             display.value = firstinput;
         }
@@ -131,6 +134,40 @@ function calculateResult() {
     }
 }
 
+function negative() {
+    if (!selectedOperatorButton) {
+        firstinput = String(-1* Number(firstinput))
+        display.value = firstinput
+    } else {
+        secondinput = String(-1 * Number(secondinput));
+        display.value = secondinput
+    }
+}
+
+function percentage() {
+    if (!selectedOperatorButton) {
+        firstinput = String(0.01* Number(firstinput))
+        display.value = firstinput
+    } else {
+        secondinput = String(0.01 * Number(secondinput));
+        display.value = secondinput
+    }
+}
+
+function decimal() {
+    if (!selectedOperatorButton) {
+        if (!firstinput.includes('.')) {
+            firstinput += '.';
+            display.value = firstinput;
+        }
+    } else {
+        if (!secondinput.includes('.')) {
+            secondinput += '.';
+            display.value = secondinput;
+        }
+    }
+}
+
 function highlightOperatorButton(operator) {
     if (selectedOperatorButton) {
         selectedOperatorButton.classList.remove('btn-operator-selected');
@@ -139,7 +176,6 @@ function highlightOperatorButton(operator) {
     selectedOperatorButton = document.getElementById(operator);
     selectedOperatorButton.classList.add('btn-operator-selected');
 }
-
 function toC() {
     document.getElementById("ac").textContent="C";
     txt = 'c';

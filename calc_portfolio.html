@@ -55,7 +55,7 @@
         <p>Logo mais pretendo finalizar um compilador para poder colocar os links da calculadoras em python e futuramente C <a target="_blank" href="https://www.youtube.com/watch?v=dQw4w9WgXcQ">aqui</a> como um executavél.
         mas no momento temos essa de python:</p>
         <p><a href="/calcdir/simple_calc.py" download> Calculadora em python</a></p>
-        <p>obs: o botão de % ainda nao faz nada.😂 </p>
+        <p>obs: ainda não está perfeito, e apresenta problemas de arredondamento. </p>
         
 
     </div>
@@ -65,7 +65,7 @@
         <div class="buttons">
             <button id="ac" class="btnc btn-tops" onclick="clearDisplay()">AC</button>
             <button class="btnc btn-tops" onclick="negative()">+/-</button>
-            <button class="btnc btn-tops" onclick="performOperation('%')">%</button>
+            <button class="btnc btn-tops" onclick="percentage()">%</button>
             <button id="/" class="btnc btn-operation" onclick="performOperation('/')">÷</button>
             <button class="btnc btn-number" onclick="appendNumber('7')">7</button>
             <button class="btnc btn-number" onclick="appendNumber('8')">8</button>
@@ -80,7 +80,7 @@
             <button class="btnc btn-number" onclick="appendNumber('3')">3</button>
             <button id="+" class="btnc btn-operation" onclick="performOperation('+')">+</button>
             <button class="btnc btn-number btn-zero" onclick="appendNumber('0')">0</button>
-            <button class="btnc btn-dot" onclick="performOperation('.')">,</button>
+            <button class="btnc btn-dot" onclick="decimal('.')">,</button>
             <button class="btnc btn-operation" onclick="calculateResult()">=</button>
         </div>
     </div>
