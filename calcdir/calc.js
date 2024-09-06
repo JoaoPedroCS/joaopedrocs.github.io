@@ -10,7 +10,7 @@ display.value = firstInput
 function appendNumber(number) {
     if (!selectedOperatorButton && firstinput === '0') {
         firstinput = number;
-        display.value = firstinput;
+        display.value = firstinput; 
     } else if (){
         currentInput += number
     }
