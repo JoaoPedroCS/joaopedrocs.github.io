@@ -1,27 +1,57 @@
 let display = document.getElementById('display');
 let firstinput = '0';
 let secondinput = '';
+let answer = '0;'
 let operator = '';
 let selectedOperatorButton = null;
+let txt = 'ac';
 
-display.value = firstinput
+display.value = firstinput;
 
 function appendNumber(number) {
     if (!selectedOperatorButton && firstinput === '0') {
         firstinput = number;
         display.value = firstinput; 
-    } else if (){
-        currentInput += number
+        if (number != '0') {
+            toC();
+        }
+    } else if (!selectedOperatorButton){
+        firstinput += number;
+        display.value = firstinput;
+    } else if (selectedOperatorButton && secondinput === '') {
+        secondinput = number;
+        display.value = secondinput;
+        selectedOperatorButton.classList.remove('btn-operator-selected');
+    } else if (selectedOperatorButton && secondinput != '') {
+        if (secondinput != '0') {
+            secondinput += number;
+            display.value = secondinput;
+        } else {
+            secondinput = number;
+            display.value = secondinput;
+        }
+        selectedOperatorButton.classList.remove('btn-operator-selected');
     }
-    if (selectedOperatorButton) {}
-    
 }
 
-function performOperation(operator) {
-    currentInput += operator;
-    display.value = currentInput;
+function performOperation(x) {
+    if (!selectedOperatorButton && secondinput === '') {
+        operator = x;
+        highlightOperatorButton(x);
+    } else if(!selectedOperatorButton && secondinput != '') {
+        operator = x;
+        highlightOperatorButton(x);
+        secondinput = '0'
+        firstinput = answer
+    } else if (selectedOperatorButton && secondinput === '') {
+        operator = x;
+        highlightOperatorButton(x);
+    } else if (selectedOperatorButton && secondinput != '') {
+        calculateResult()
+        operator = x;
+        highlightOperatorButton(x);
 
-    highlightOperatorButton(operator);
+    }
 }
 
 function highlightOperatorButton(operator) {
@@ -33,55 +63,77 @@ function highlightOperatorButton(operator) {
     selectedOperatorButton.classList.add('btn-operator-selected');
 }
 
-function negative() {
-    currentInput += '*-1'
-    display.value = '-' + display.value
-}
-
 function clearDisplay() {
-    currentInput = '0';
-    previousInput = '';
-    operator = '';
-    display.value = currentInput;
-
-    if (selectedOperatorButton) {
-        selectedOperatorButton.classList.remove('btn-operator-selected');
-        selectedOperatorButton = null;
-    }
-}
-
-function calculateResult() {
-    try {
-        display.value = eval(currentInput);
-        currentInput = display.value;
-
+    if (txt === 'ac') {
+        firstinput = '0';
+        secondinput = '';
+        display.value = firstinput;
         if (selectedOperatorButton) {
             selectedOperatorButton.classList.remove('btn-operator-selected');
             selectedOperatorButton = null;
         }
-    } catch (error) {
-    display.value = 'Error';
-    currentInput = '0';  // Reseta após erro
+    } else if (!selectedOperatorButton) {
+        firstinput = '0';
+        display.value = firstinput;
+        toAC();
+    } else if (selectedOperatorButton) {
+        secondinput = '0';
+        display.value = secondinput;
+        toAC();
+        selectedOperatorButton.classList.add('btn-operator-selected');
+    }
+
+
 }
+
+function toC() {
+    document.getElementById("ac").textContent="C";
+    txt = 'c';
 }
-function calculateIntermediateResult() {
+function toAC() {
+    document.getElementById("ac").textContent="AC";
+    txt = 'ac';
+}
+
+function calculateResult() {
     try {
-        if (operator === '+') {
-            previousInput = String(Number(previousInput) + Number(currentInput));
-        } else if (operator === '-') {
-            previousInput = String(Number(previousInput) - Number(currentInput));
-        } else if (operator === '*') {
-            previousInput = String(Number(previousInput) * Number(currentInput));
-        } else if (operator === '/') {
-            if (currentInput === '0') throw new Error('Error');
-            previousInput = String(Number(previousInput) / Number(currentInput));
+        if (operator != '') {
+            if (secondinput != '') {
+                if (operator === '+') {
+                    answer = String(Number(firstinput) + Number(secondinput));
+                } else if (operator === '-') {
+                    answer = String(Number(firstinput) - Number(secondinput));
+                } else if (operator === '*') {
+                    answer = String(Number(firstinput) * Number(secondinput));
+                } else if (operator === '/') {
+                    if (secondinput === '0') throw new Error('Error');
+                    answer = String(Number(firstinput) / Number(secondinput));
+                }
+                selectedOperatorButton.classList.remove('btn-operator-selected');
+                selectedOperatorButton = null;
+                firstinput = answer
+            } else {
+                if (operator === '+') {
+                    answer = String(Number(firstinput) + Number(firstinput));
+                } else if (operator === '-') {
+                    answer = String(Number(firstinput) - Number(firstinput));
+                } else if (operator === '*') {
+                    answer = String(Number(firstinput) * Number(firstinput));
+                } else if (operator === '/') {
+                    if (secondinput === '0') throw new Error('Error');
+                    answer = String(Number(firstinput) / Number(firstinput));
+                }
+                selectedOperatorButton.classList.remove('btn-operator-selected');
+            }
+            display.value = firstinput;
+        } else {
+            display.value = firstinput
         }
-        display.value = previousInput;
-        currentInput = '0';
+        
     } catch (error) {
-        display.value = 'Error';
-        currentInput = '0';
-        previousInput = '';
+        display.value = 'Erroor';
+        answer = '0';
+        firstinput = '0';
         operator = '';
     }
 }
