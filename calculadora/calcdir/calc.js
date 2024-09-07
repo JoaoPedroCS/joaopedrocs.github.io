@@ -52,6 +52,7 @@ function performOperation(x) {
         calculateResult();
         operator = x;
         highlightOperatorButton(x);
+        secondinput = ''
     }
     stage = 2;
 }
