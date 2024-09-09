@@ -145,19 +145,20 @@ function negative() {
     }
 }
 
-function moveDecimalLeft(numStr) {
+function moveDecimalLeftTwoPlaces(numStr) {
+    // Verifica se a string já tem um ponto decimal
     let decimalIndex = numStr.indexOf('.');
   
     if (decimalIndex === -1) {
-      // Se não houver ponto, adicionar no final e mover uma casa para a esquerda
-      return numStr.slice(0, -2) + '.' + numStr.slice(-2) + numStr.slice(-1);
-    } else if (decimalIndex === 0) {
-      // Se o ponto estiver no início, retorná-lo como 0.X
-      return '0' + numStr;
+      // Se não houver ponto, adicionar no final e mover duas casas para a esquerda
+      return numStr.slice(0, -2) + '.' + numStr.slice(-2);
+    } else if (decimalIndex <= 1) {
+      // Se o ponto estiver no início ou na primeira posição, retorna como 0.XX
+      return '0.' + numStr.replace('.', '');
     } else {
-      // Remover o ponto e colocá-lo uma posição à esquerda
+      // Remover o ponto e colocá-lo duas posições à esquerda
       let beforeDecimal = numStr.slice(0, decimalIndex - 2);
-      let afterDecimal = numStr.slice(decimalIndex - 2) + numStr.slice(decimalIndex - 1);
+      let afterDecimal = numStr.slice(decimalIndex - 2);
       return beforeDecimal + '.' + afterDecimal.replace('.', '');
     }
   }
