@@ -145,18 +145,21 @@ function negative() {
     }
 }
 
-function moveDecimalLeftTwoPlaces(numStr) {
-    // Verifica se a string já tem um ponto decimal
+function moveDecimalLeft(numStr) {
     let decimalIndex = numStr.indexOf('.');
   
     if (decimalIndex === -1) {
-      // Se não houver ponto, adicionar no final e mover duas casas para a esquerda
-      return numStr.slice(0, -2) + '.' + numStr.slice(-2);
-    } else if (decimalIndex <= 1) {
-      // Se o ponto estiver no início ou na primeira posição, retorna como 0.XX
+        if ((numStr.slice(0, -2) + '.' + numStr.slice(-2)).indexOf('.') === 0) {
+            return '0' + numStr.slice(0, -2) + '.' + numStr.slice(-2);
+        } else {
+            return numStr.slice(0, -2) + '.' + numStr.slice(-2);
+        }
+      
+    } else if (decimalIndex === 1) {
+      return '0.0' + numStr.replace('.', '');
+    } else if (decimalIndex === 2) {
       return '0.' + numStr.replace('.', '');
     } else {
-      // Remover o ponto e colocá-lo duas posições à esquerda
       let beforeDecimal = numStr.slice(0, decimalIndex - 2);
       let afterDecimal = numStr.slice(decimalIndex - 2);
       return beforeDecimal + '.' + afterDecimal.replace('.', '');
@@ -166,10 +169,10 @@ function moveDecimalLeftTwoPlaces(numStr) {
 
 function percentage() {
     if (!selectedOperatorButton) {
-        firstinput = String(0.01* Number(firstinput))
+        firstinput = moveDecimalLeft(firstinput);
         display.value = firstinput
     } else {
-        secondinput = String(0.01 * Number(secondinput));
+        secondinput = moveDecimalLeft(secondinput);
         display.value = secondinput
     }
 }
