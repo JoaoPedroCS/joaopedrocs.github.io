@@ -1,3 +1,31 @@
+:root {
+    --background: rgb(240, 248, 255);
+    --primary: #1c1d20;
+    --secondary: #4a4d57;
+    --accent: #f46e00;
+    --text-color: #0000;
+}
+
+*{
+    margin: 0;
+    padding: 0;
+}
+
 #body {
-    background-color: aliceblue;
+    background-color: var(--background);
+    color: black;
+}
+
+
+h1 {
+    background: linear-gradient(to right, rgb(180, 42, 42), orange);
+    background-clip: text;
+    color: transparent;
+}
+
+.spanny {
+    position: absolute;
+    height: 12vh;
+    width: 12vw;
+    background: linear-gradient(to right, rgb(180, 42, 42), orange);
 }

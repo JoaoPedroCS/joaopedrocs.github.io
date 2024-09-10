@@ -12,18 +12,25 @@
     <script src="https://kit.fontawesome.com/f057b59170.js" crossorigin="anonymous"></script>
     <link href="https://fonts.googleapis.com/css?family=Source+Code+Pro:400,900|Source+Sans+Pro:300,900&display=swap"
         rel="stylesheet" />
-        <link rel="preconnect" href="https://fonts.googleapis.com">
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300&display=swap" rel="stylesheet">
     <title>To Do</title>
     <link rel="icon" type="image/png" href="../assets/favicon.png">
 </head>
 
 <body id="body">
+    <!--<div class="spanny spanny1"></div>
+    <div class="spanny spanny2"></div>
+    <div class="spanny spanny3"></div>
+    <div class="spanny spanny4"></div>
+    <div class="spanny spanny5"></div>
+    <div class="spanny spanny6"></div>-->
+
     <header>
         <div class="logo">
             <a href="../"><img src="../assets/jplogo.png" alt=""></a>
-            
+
         </div>
         <button class="nav-toggle" aria-label="toggle navigation">
             <span class="hamburger"></span>
@@ -37,34 +44,74 @@
             </ul>
         </nav>
     </header>
-
-    <section class="intro" id="home">
-        <h1 class="section-title section-title-intro">
-            Aplicativo<strong>To-Do</strong>
-        </h1>
-        <p class="section-subtitle section-subtitle-intro">Hello world 3.0</p>
-        <img src="tododir/assets/portfolio-01.jpg" alt="Imagem do To-do" class="intro-img">
-    </section>
+    <div class="todo">
+        <h1 class="todo-title">TO-DO APP</h1>
+        <div class="wrapper">
+            <form>
+                <input id="todo-input" type="text" placeholder="Escreva e aperte enter para adicionar">
+                <button id="add-button">ADD</button>
+            </form>
+            <ul id="todo-list">
+                <li class="todo">
+                    <input type="checkbox" id="todo-1">
+                    <label for="todo-1" class="custom-checkbox"><svg xmlns="http://www.w3.org/2000/svg" height="24px"
+                            viewBox="0 -960 960 960" width="24px" fill="#e8eaed">
+                            <path d="M382-240 154-468l57-57 171 171 367-367 57 57-424 424Z" />
+                        </svg></label>
+                    <label for="todo-1" class="todo-text">webdev project</label>
+                    <button class="delete-button">
+                        <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px"
+                            fill="#e8eaed">
+                            <path
+                                d="M280-120q-33 0-56.5-23.5T200-200v-520h-40v-80h200v-40h240v40h200v80h-40v520q0 33-23.5 56.5T680-120H280Zm400-600H280v520h400v-520ZM360-280h80v-360h-80v360Zm160 0h80v-360h-80v360ZM280-720v520-520Z" />
+                        </svg>
+                    </button>
+                </li>
+                <li class="todo"></li>
+                    <input type="checkbox" id="todo-2">
+                    <label for="todo-2" class="custom-checkbox"><svg xmlns="http://www.w3.org/2000/svg" height="24px"
+                            viewBox="0 -960 960 960" width="24px" fill="#e8eaed">
+                            <path d="M382-240 154-468l57-57 171 171 367-367 57 57-424 424Z" />
+                        </svg></label>
+                    <label for="todo-2" class="todo-text">shower</label>
+                    <button class="delete-button">
+                        <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px"
+                            fill="#e8eaed">
+                            <path
+                                d="M280-120q-33 0-56.5-23.5T200-200v-520h-40v-80h200v-40h240v40h200v80h-40v520q0 33-23.5 56.5T680-120H280Zm400-600H280v520h400v-520ZM360-280h80v-360h-80v360Zm160 0h80v-360h-80v360ZM280-720v520-520Z" />
+                        </svg>
+                    </button>
+                </li>
+            </ul>
+        </div></div>
+    
 
 
 
     <div class="portfolio-item-individual">
-        <p>Em processo.
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Temporibus dolorum numquam ullam nisi soluta eveniet
+            minima autem aperiam, quo possimus non cumque obcaecati nulla rem eaque illum modi facere voluptas?
         </p>
-        <p>em feitura
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Blanditiis officiis voluptatem, reprehenderit hic
+            asperiores inventore impedit numquam omnis fugit, esse saepe autem facilis doloremque possimus laboriosam
+            laudantium rem assumenda? Reiciendis.
         </p>
-        <p><a href="#" download class="todo-link">Dowload To-Do</a></p>
+        <p><a href="#" download class="todo-link">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Pariatur
+                perferendis quaerat molestiae, expedita dolorem aperiam odio, suscipit assumenda eligendi tempora, non
+                ratione maiores quis cum dignissimos minus illo excepturi reprehenderit.</a></p>
     </div>
 
 
 
-    <div class="portfolio-item-individual"><p>obs: sem observaçoes até aqui</p></div>
+    <div class="portfolio-item-individual">
+        <p>obs: sem observaçoes até aqui</p>
+    </div>
 
     <footer class="footer">
         <a href="mailto:joaopedrocorreasilva0@gmail.com" class="footer-link">joaopedrocorreasilva0@gmail.com</a>
         <ul class="social-list">
             <li class="social-list-item">
-                <a  target="_blank" class="social-list-link" href="https://github.com/JoaoPedroCS">
+                <a target="_blank" class="social-list-link" href="https://github.com/JoaoPedroCS">
                     <i class="fab fa-github"></i>
                 </a>
             </li>
