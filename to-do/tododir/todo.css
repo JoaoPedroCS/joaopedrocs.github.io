@@ -1,21 +1,27 @@
 :root {
-    --background: rgb(255, 250, 237);
-    --primary: #ffffff;
-    --secondary: #a8a6a6;
+    --background: #1e1e1e;
+    --primary: #2d2d2d86;
+    --secondary: #858585;
     --accent: rgb(255, 111, 0);
-    --text-color: #000000;
+    --text-color: #ffffff;
 }
-
+.nav {
+    background-color: #1e1e1e;
+}
 *{
     margin: 0;
     padding: 0;
+}
+
+p {
+    color: var(--text-color);
 }
 
 #todo {
     margin: auto;
     width: 700px;
     max-width: 100%;
-    background-color: rgba(255, 255, 255, 0.38);
+    background-color: #0f0f0f;
     font-size: 16pt;
     color: var(--text-color);
     display: flex;
@@ -69,13 +75,11 @@ h1 {
     outline: none;
 }
 
-.todo-checkbox:focus {
-    outline: none;
+.custom-checkbox:focus {
+    outline: 2px;
 }
 
-.delete-button:focus {
-    outline: none;
-}
+
 
 form{
     position: relative;
@@ -92,7 +96,7 @@ form{
     border-radius: 1000px;
     font: inherit;
     font-weight: 600;
-    color: var(--background);
+    color: var(--text-color);
     cursor: pointer;
 }
 
@@ -103,6 +107,8 @@ form{
     border-radius: 15px;
     display: flex;
     align-items: center;
+    box-shadow: 0.25em 0.25em 0.75em rgba(0,0,0,.25),
+    0.125em 0.125em 0.25em rgba(0,0,0,.15);
 }
 
 .todo .todo-text {
@@ -165,6 +171,14 @@ input[type="checkbox"] {
         font-size: 12pt;    
     }
 
+    #body {
+        padding: 5px;
+    }
+    #todo {
+        width: 100%;
+        padding: 5px;
+    }
+
     #add.button{
         position: unset;
         width: 100%;
@@ -177,5 +191,8 @@ input[type="checkbox"] {
         margin-top: 50px;
         font-size: 15vw;
     }
-}
 
+    #todo-input {
+        font-size: 4vw;
+    }
+}
