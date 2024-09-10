@@ -1,8 +1,8 @@
 :root {
-    --background: rgb(240, 248, 255);
+    --background: rgb(255, 253, 249);
     --primary: #ffffff;
-    --secondary: #4a4d57;
-    --accent: #f46e00;
+    --secondary: #a8a6a6;
+    --accent: orange;
     --text-color: #000000;
 }
 
@@ -103,6 +103,62 @@ form{
     padding-right: 0;
     flex-grow: 1;
 }
+
+.delete-button {
+    padding: 3px;
+    background: none;
+    border: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+
+.delete-button svg {
+    transition: 200ms;
+}
+
+.delete-button:hover svg {
+    fill: #ff0033;
+}
+
+.custom-checkbox {
+    border: 2px solid var(--accent);
+    border-radius: 50%;
+    min-height: 20px;
+    min-width: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-shrink: 0;
+}
+
+input[type="checkbox"]:checked ~ .custom-checkbox{
+    background: linear-gradient(to bottom, red, orange);
+}
+
+input[type="checkbox"]:checked ~ .custom-checkbox svg{
+    fill: var(--primary);
+}
+
+input[type="checkbox"]:checked ~ .todo-text{
+    text-decoration: line-through;
+    color: var(--secondary);
+}
+
+input[type="checkbox"] {
+    display: none;
+}
+
+
+
+
+
+
+
+
+
+
 
 
 .spanny {
