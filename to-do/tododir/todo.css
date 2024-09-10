@@ -1,6 +1,6 @@
 :root {
     --background: rgb(240, 248, 255);
-    --primary: #1c1d20;
+    --primary: #ffffff;
     --secondary: #4a4d57;
     --accent: #f46e00;
     --text-color: #000000;
@@ -57,6 +57,51 @@ h1 {
     font: inherit;
     color: var(--text-color);
     caret-color: var(--accent-color);
+}
+#todo-input:focus {
+    outline: none;
+}
+
+.todo-checkbox:focus {
+    outline: none;
+}
+
+.delete-button:focus {
+    outline: none;
+}
+
+form{
+    position: relative;
+}
+
+#add-button {
+    position: absolute;
+    top: 0;
+    right: 0;
+    background: linear-gradient(to left, red, orange);
+    height: 100%;
+    padding: 0 30px;
+    border: none;
+    border-radius: 1000px;
+    font: inherit;
+    font-weight: 600;
+    color: var(--background);
+    cursor: pointer;
+}
+
+.todo {
+    margin-bottom: 10px;
+    padding: 0 16px;
+    background-color: var(--primary);
+    border-radius: 15px;
+    display: flex;
+    align-items: center;
+}
+
+.todo .todo-text {
+    padding: 15px;
+    padding-right: 0;
+    flex-grow: 1;
 }
 
 
