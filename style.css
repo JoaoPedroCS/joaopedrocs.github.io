@@ -294,7 +294,7 @@ header {
 /*  My services section  */
 
 .my-services {
-    background-color: var(--clr-light);
+    background-color: var(--clr-accent);
     background-image: url(assets/HD-wallpaper-computer-code-la-lang-programming-sad-software.jpg);
     background-size: cover;
     background-blend-mode: multiply;
