@@ -48,7 +48,17 @@ function createTodoItem(todo, todoIndex) {
                         </svg>
                     </button>
     `
+    const deleteButton = todoLI.querySelector(".delete-button");
+    deleteButton.addEventListener("click", ()=>{
+        deleteTodoItem(todoIndex);
+    })
     return todoLI
+}
+
+function deleteTodoItem(todoIndex) {
+    allTodos = allTodos.filter((_, i)=> i !== todoIndex);
+    saveTodos();
+    updateTodoList();
 }
 
 function saveTodos() {
