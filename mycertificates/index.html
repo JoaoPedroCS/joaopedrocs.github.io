@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/7.0.0/normalize.min.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.css"
+        integrity="sha256-46qynGAkLSFpVbEBog49gvNhfrOj+BmwXdxFgVK/Kvc=" crossorigin="anonymous" />
+    <link rel="stylesheet" href="../style.css" />
+    <link rel="stylesheet" href="calcdir/calc.css" />
+    <script src="https://kit.fontawesome.com/f057b59170.js" crossorigin="anonymous"></script>
+    <link href="https://fonts.googleapis.com/css?family=Source+Code+Pro:400,900|Source+Sans+Pro:300,900&display=swap"
+        rel="stylesheet" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300&display=swap" rel="stylesheet">
+    <title>Calculadora</title>
+    <link rel="icon" type="image/png" href="../assets/favicon.png">
+</head>
+
+<body>
+    <header>
+        <div class="logo">
+            <a href="../"><img src="../assets/jplogo.png" alt=""></a>
+
+        </div>
+        <button class="nav-toggle" aria-label="toggle navigation">
+            <span class="hamburger"></span>
+        </button>
+        <nav class="nav">
+            <ul class="nav-list">
+                <li class="nav-item"><a href="../#home" class="nav-link">Home</a></li>
+                <li class="nav-item"><a href="../#services" class="nav-link">My Services</a></li>
+                <li class="nav-item"><a href="../#about" class="nav-link">About me</a></li>
+                <li class="nav-item"><a href="../#work" class="nav-link">My Work</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section class="intro" id="home">
+        <h1 class="section-title section-title-intro">
+            Calculadora<strong>Py e JS</strong>
+        </h1>
+        <p class="section-subtitle section-subtitle-intro">Hello world 2.0</p>
+        <img src="/calculadora/calcdir/assets/calcimg.png" alt="Imagem de uma calculadora do IOS, feita por mim"
+            class="intro-img">
+    </section>
+
+
+
+    <div class="portfolio-item-individual">
+        <p>Fiz calculadoras em python e JavaScript. Python foi pra sair do terminal, já fiz coisas bem mais complexas
+            com ele usando terminal, mas usar o tkinter foi interessante. Java script foi mais para dominar um pouco
+            melhor a linguagem e porque quis algo na webpage mesmo,<a class="calc-link" href="#calc"> logo abaixo</a>.
+            Já que estava na tarefa, me
+            desafiei a copiar o design da apple, funciona 👍.
+        </p>
+        <p>Se o compilador estiver feito, na parte de meus projetos, talvez o dowload abaixo vai ser da calculadora em
+            python em <a target="_blank" class="calc-link" href="https://www.google.com/search?q=.exe”">.exe </a>
+            mas no momento temos essa em .py mesmo:</p>
+        <p><a href="/calculadora/calcdir/assets/simple_calc.py" download class="calc-link"> Dowload da calculadora.</a></p>
+    </div>
+
+    <div class="calculator" id="calc">
+        <input type="text" class="display" id="display" disabled>
+        <div class="buttons">
+            <button id="ac" class="btnc btn-tops" onclick="clearDisplay()">AC</button>
+            <button class="btnc btn-tops" onclick="negative()">+/-</button>
+            <button class="btnc btn-tops" onclick="percentage()">%</button>
+            <button id="/" class="btnc btn-operation" onclick="performOperation('/')">÷</button>
+            <button class="btnc btn-number" onclick="appendNumber('7')">7</button>
+            <button class="btnc btn-number" onclick="appendNumber('8')">8</button>
+            <button class="btnc btn-number" onclick="appendNumber('9')">9</button>
+            <button id="*" class="btnc btn-operation" onclick="performOperation('*')">×</button>
+            <button class="btnc btn-number" onclick="appendNumber('4')">4</button>
+            <button class="btnc btn-number" onclick="appendNumber('5')">5</button>
+            <button class="btnc btn-number" onclick="appendNumber('6')">6</button>
+            <button id="-" class="btnc btn-operation" onclick="performOperation('-')">-</button>
+            <button class="btnc btn-number" onclick="appendNumber('1')">1</button>
+            <button class="btnc btn-number" onclick="appendNumber('2')">2</button>
+            <button class="btnc btn-number" onclick="appendNumber('3')">3</button>
+            <button id="+" class="btnc btn-operation" onclick="performOperation('+')">+</button>
+            <button class="btnc btn-number btn-zero" onclick="appendNumber('0')">0</button>
+            <button class="btnc btn-dot" onclick="decimal('.')">,</button>
+            <button class="btnc btn-operation" onclick="calculateResult()">=</button>
+        </div>
+    </div>
+
+    <div class="portfolio-item-individual">
+        <p>obs: Foi chatinho de fazer a essa funcionalidade igual da apple, mas no lado bom eu aprendi a consertar o
+            problema clássico de arredondamento do float, porque não é simples como apenas usar round.</p>
+    </div>
+
+    <footer class="footer">
+        <a href="mailto:joaopedrocorreasilva0@gmail.com" class="footer-link">joaopedrocorreasilva0@gmail.com</a>
+        <ul class="social-list">
+            <li class="social-list-item">
+                <a target="_blank" class="social-list-link" href="https://github.com/JoaoPedroCS">
+                    <i class="fab fa-github"></i>
+                </a>
+            </li>
+            <li class="social-list-item">
+                <a class="social-list-link" href="http://linkedin.com">
+                    <i class="fa-brands fa-linkedin"></i>
+                </a>
+            </li>
+            <li class="social-list-item">
+                <a class="social-list-link" href="https://x.com/JoaoPedroCS__">
+                    <i class="fa-brands fa-x-twitter"></i>
+                </a>
+            </li>
+            <li class="social-list-item">
+                <a class="social-list-link" href="https://codepen.io">
+                    <i class="fab fa-codepen"></i>
+                </a>
+            </li>
+        </ul>
+    </footer>
+
+
+    <script src="../index.js"></script>
+    <script src="calcdir/calc.js"></script>
+
+</body>
+
+</html>
+
+</html>
