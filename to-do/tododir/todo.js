@@ -81,10 +81,11 @@ function createTodoItem(todo, todoIndex) {
 
 
         const saveChanges = () => {
-            if (inputField.value.trim() === "") {
+            const trimmedValue = inputField.value.trim();
+            if (trimmedValue === "") {
                 return;
             }
-            todo.text = inputField.value;
+            todo.text = trimmedValue;
             saveTodos();
             updateTodoList();
         };
