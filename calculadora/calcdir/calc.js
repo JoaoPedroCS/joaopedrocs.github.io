@@ -168,12 +168,17 @@ function moveDecimalLeft(numStr) {
   
 
 function percentage() {
-    if (!selectedOperatorButton) {
-        firstinput = moveDecimalLeft(firstinput);
-        display.value = firstinput
-    } else {
-        secondinput = moveDecimalLeft(secondinput);
-        display.value = secondinput
+    try {
+        if (!selectedOperatorButton) {
+            firstinput = moveDecimalLeft(firstinput);
+            display.value = firstinput;
+        } else {
+            secondinput = moveDecimalLeft(secondinput);
+            display.value = secondinput;
+        }
+    } catch (error) {
+        console.error(error.message);
+        display.value = "Error";
     }
 }
 
