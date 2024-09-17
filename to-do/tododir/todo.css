@@ -193,3 +193,54 @@ input[type="checkbox"] {
         font-size: 4vw;
     }
 }
+
+.edit-button {
+    padding: 3px;
+    margin-right: 3px;
+    background: none;
+    border: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+
+.edit-button svg {
+    transition: 200ms;
+}
+
+.edit-button:hover svg {
+    fill: #f0b709;
+}
+
+.edit-input {
+    margin: 15px;
+    padding-left: 6px;
+    font-size: 16pt;
+    height: 34px;
+    padding-right: 0;
+    flex-grow: 1;
+    background-color: white;
+    color: black;
+    border: none;
+    border-radius: 15px;
+
+}
+
+.edit-input:focus {
+    outline: none;
+}
+
+.add-edit {
+    top: 0;
+    right: 0;
+    background: linear-gradient(to left, red, orange);
+    height: 100%;
+    padding: 0 20px;
+    border: none;
+    border-radius: 1000px;
+    font: inherit;
+    font-weight: 600;
+    color: var(--text-color);
+    cursor: pointer;
+}
