@@ -36,6 +36,7 @@
 
 /* General styles */
 
+
 html {
     scroll-behavior: smooth;
 }
@@ -47,6 +48,7 @@ body {
     font-family: var(--ff-primary);
     font-size: var(--fs-body);
     line-height: 1.6;
+    padding-top: 70px;
 }
 
 section {
@@ -133,6 +135,9 @@ h3 { font-size: var(--fs-h3) }
 /* header */
 
 header {
+    position: fixed;
+    top: 3px;
+    width: 100%;
     display: flex;
     justify-content: space-between;
     padding: 1em;
@@ -260,6 +265,16 @@ header {
 }
 
 @media (min-width: 600px) {
+    header {
+        padding: 2em;
+    }
+    .nav-toggle {
+        top: 2em;
+        right: 2em;
+    }
+    .logo {
+        max-width: 200px;
+    }
     .intro {
         display: grid;
         width: min-content;
