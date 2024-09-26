@@ -269,14 +269,14 @@ header {
         padding-top: 100px;
     }
     header {
-        padding: 2em;
+        padding: 1.5em;
     }
     .nav-toggle {
-        top: 2em;
-        right: 2em;
+        top: 1.5em;
+        right: 1.5em;
     }
     .logo {
-        max-width: 200px;
+        max-width: 170px;
     }
     .intro {
         display: grid;
