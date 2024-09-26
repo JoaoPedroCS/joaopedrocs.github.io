@@ -18,5 +18,11 @@
 .badges {
   margin-left: 10px;
   margin-right: 10px;
-  width: 250px;
+  width: 20%;
+  max-width: 200px;
+}
+
+#freeCodeCamp {
+  width: 30%;
+  max-width: 250px;
 }
