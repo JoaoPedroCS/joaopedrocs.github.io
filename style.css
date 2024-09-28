@@ -341,8 +341,13 @@ header {
 }
 
 .service {
+    display: flex;
     max-width: 500px;
     margin: 0 auto;
+}
+
+.techs {
+    width: 5vw;
 }
 
 @media (min-width: 800px) {
