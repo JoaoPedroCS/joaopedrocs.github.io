@@ -346,8 +346,16 @@ header {
     margin: 0 auto;
 }
 
+service:focus {
+    outline: 0px;
+}
+
 .techs {
     width: 5vw;
+}
+
+.techs:focus {
+    outline: 0px;
 }
 
 @media (min-width: 800px) {
