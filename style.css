@@ -338,21 +338,29 @@ header {
 
 .services {
     margin-bottom: 4em;
+    width: auto;
 }
 
 .service {
     display: flex;
-    max-width: 500px;
+    max-width: 80%;
     margin: 0 auto;
+}
+
+.service a {
+    margin: 10px;
+    width: auto;
+}
+
+.techs {
+    width: 10vw;
 }
 
 service:focus {
     outline: 0px;
 }
 
-.techs {
-    width: 5vw;
-}
+
 
 .techs:focus {
     outline: 0px;
