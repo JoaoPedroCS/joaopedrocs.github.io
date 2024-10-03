@@ -1,18 +1,16 @@
 .badges-div {
-  display: flex;
-  justify-content: left;
-  align-items: center;
   position: relative;
-  margin-left: 15%;
-  margin-right: 15%;
   padding-top: 3em;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  max-width: 90%;
+  margin: 1em auto;
 }
 
 .badges-title {
   font-size: 1.75em;
-  position: absolute;
-  top: 0.25em;
-  left: 0;
 }
 
 .badges {
