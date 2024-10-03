@@ -1,26 +1,11 @@
-.badges-div {
-  position: relative;
-  padding-top: 3em;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  flex-wrap: wrap;
-  max-width: 90%;
-  margin: 1em auto;
-}
-
 .badges-title {
   font-size: 1.75em;
 }
 
-.badges {
-  margin-left: 10px;
-  margin-right: 10px;
-  width: 20%;
-  max-width: 200px;
-}
-
-#freeCodeCamp {
-  width: 30%;
-  max-width: 250px;
+.badges-div {
+  display: grid;
+  gap: 1em;
+  grid-auto-flow: column;
+  grid-auto-columns: 33%;
+  overflow-x: auto;
 }
