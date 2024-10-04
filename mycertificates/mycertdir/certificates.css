@@ -1,28 +1,73 @@
-.badges-div {
-  display: flex;
-  justify-content: left;
-  align-items: center;
-  position: relative;
-  margin-left: 15%;
-  margin-right: 15%;
-  padding-top: 3em;
+:root {
+  --spacer: 1em;
 }
 
 .badges-title {
   font-size: 1.75em;
-  position: absolute;
-  top: 0.25em;
-  left: 0;
+  margin: var(--spacer) 0 var(--spacer) 5%;
 }
 
-.badges {
-  margin-left: 10px;
-  margin-right: 10px;
-  width: 20%;
-  max-width: 200px;
+.badges-div {
+  display: grid;
+  gap: var(--spacer);
+  grid-auto-flow: column;
+  grid-auto-columns: 24%;
+  margin: 0 5%;
+  padding: 0 var(--spacer) var(--spacer);
+  overflow-x: auto;
+  overscroll-behavior-inline: contain;
 }
 
-#freeCodeCamp {
-  width: 30%;
-  max-width: 250px;
+.certificate-div {
+  display: grid;
+  gap: var(--spacer);
+  grid-auto-flow: column;
+  grid-auto-columns: 36%;
+  margin: 0 5%;
+  padding: 0 var(--spacer) var(--spacer);
+  overflow-x: auto;
+  overscroll-behavior-inline: contain;
+}
+
+.badge-element {
+  padding: var(--spacer);
+  background: #000;
+  border-radius: 1em;
+  box-shadow: 0 0 .5em #000;
+}
+
+.badge-element > .badges > img {
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  object-fit: contain;
+}
+
+.badge-element > .certificate > img {
+  width: 100%;
+  aspect-ratio: 10 / 6;
+  object-fit: contain;
+}
+
+.snaps-inline {
+  scroll-snap-type: inline mandatory;
+  scroll-padding-inline: 0.7em;
+}
+
+.snaps-inline > * {
+  scroll-snap-align: start;
+}
+
+@media (max-width: 600px) {
+  .badges-div {
+    grid-auto-columns: 40%;
+  }
+
+  .certificate-div {
+    grid-auto-columns: 60%;
+  }
+
+  .badge-element {
+    padding: .2em;
+  }
+  
 }

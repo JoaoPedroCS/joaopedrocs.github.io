@@ -314,16 +314,22 @@ header {
 .my-services {
     background-color: var(--clr-accent);
     background-image: url(assets/HD-wallpaper-computer-code-la-lang-programming-sad-software.jpg);
+    padding: 3em 2em;
+    height: 80vh;
     background-size: cover;
     background-blend-mode: multiply;
     color: var(--clr-dark);
-    text-align: center;
     box-shadow: 0px 10px 10px rgba(0, 0, 0, 0.5), 0px -10px 10px rgba(0, 0, 0, 0.5);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
 }
 
 .section-title-services {
     color: var(--clr-dark);
     position: relative;
+    margin-bottom: 0;
 }
 
 .section-title-services::after {
@@ -331,20 +337,18 @@ header {
     display: block;
     width: 3em;
     height: 2px;
-    margin: 0.5em auto 1em;
+    margin: 0.5em auto 0;
     background: var(--clr-dark);
     opacity: 0.25;
 }
 
-.services {
-    margin-bottom: 4em;
-    width: auto;
-}
-
 .service {
     display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
     max-width: 80%;
-    margin: 0 auto;
+    margin: 1em 0;
 }
 
 .service a {
@@ -357,7 +361,13 @@ header {
 }
 
 .techs {
-    width: 5vw;
+    width: 50px;
+}
+
+@media (min-width: 588px) {
+    .techs {
+        width: 70px;
+    }
 }
 
 @media (min-width: 800px) {
@@ -370,6 +380,10 @@ header {
     
     .service + .service {
         margin-left: 2em;
+    }
+
+    .btn {
+        font-size: 1em;
     }
 }
 
