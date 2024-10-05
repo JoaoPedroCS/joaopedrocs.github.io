@@ -1,0 +1,108 @@
+h1 {
+    text-align: center;
+    color: white;
+}
+.container {
+    font-family: 'Pokemon Solid', cursive;;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 80vw;
+    margin: 10px auto 40px;
+    padding: 10px;
+    border-radius: 10px;
+    background-color: #f0f0f0;
+    color: black;
+    max-width: 550px;
+}
+
+.poke-input {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    width: 60%;
+    margin: 10px auto;
+}
+
+.poke-search {
+    margin: 5px;
+    padding: 10px 20px;
+    border-radius: 5px;
+    background-color: #158e00;
+    color: white;
+    font-weight: 600;
+    font-family: 'Pokemon Solid', sans-serif; /* Pokemon font style */
+    border: 3px solid #0b5e00;
+    box-shadow: 0 4px #0b5e00;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    transition: all 0.1s ease-in-out;
+}
+
+.poke-search:active {
+    box-shadow: none;
+    transform: translateY(4px);
+}
+.poke-search:focus {
+    outline: none;
+}
+
+.poke-div {
+    margin: 10px 0;
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    justify-content: center;
+    width: 95%;
+    height: 60vh;
+    padding: 15px;
+    background-color: #e1e1e1;
+    color: rgb(0, 0, 0);
+    border-radius: 10px;
+}
+
+.poke-sprite {
+    align-self: center;
+    flex-grow: 1;
+    max-width: 100%;
+    height: auto;
+}
+
+.types {
+    display: flex;
+}
+
+.type {
+    margin: 5px;
+    width: 70px;
+    height: 25px;
+    background-color: rgb(255, 255, 255);
+    border-radius: 5px;
+    text-align: center;
+    color: black;
+    font-weight: 600;
+}
+
+.poke-stats {
+    background-color: #e1e1e1;
+    width: 95%;
+    padding: 15px;
+    display: grid;
+    grid-template-rows: repeat(7, auto);
+    grid-template-columns: 3fr 1fr;
+    gap: 10px;
+}
+
+.stat-title {
+    font-weight: 600;
+    text-transform: uppercase;
+}
+
+.poke-stats p {
+    background-color: rgb(94, 94, 0);
+    text-align: center;
+    border-radius: 5px;
+    color: white;
+}
