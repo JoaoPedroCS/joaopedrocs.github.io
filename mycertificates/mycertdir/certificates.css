@@ -30,10 +30,24 @@
 }
 
 .badge-element {
+  position: relative;
   padding: var(--spacer);
   background: #000;
   border-radius: 1em;
-  box-shadow: 0 0 .5em #000;
+}
+
+.cert-element {
+  position: relative;
+  padding: var(--spacer) var(--spacer) 2em;
+  background: #000;
+  border-radius: 1em;
+}
+
+.cert-element #freeCodeCamp p {
+  position: absolute;
+  bottom: -.5em;
+  left: 1.5em;
+  color: #fff;
 }
 
 .badge-element > .badges > img {
@@ -65,9 +79,15 @@
   .certificate-div {
     grid-auto-columns: 60%;
   }
-
-  .badge-element {
-    padding: .2em;
-  }
   
+}
+
+@media (min-width: 800px) {
+  .badges-div {
+    grid-auto-columns: 17%;
+  }
+
+  .certificate-div {
+    grid-auto-columns: 26%;
+  }
 }
