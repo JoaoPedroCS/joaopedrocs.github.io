@@ -1,6 +1,10 @@
 h1 {
+    font-size: 3em;
     text-align: center;
     color: white;
+    margin-bottom: 40px;
+    color: #f46e00;
+    font-family: 'Pokemon Solid', cursive;
 }
 .container {
     font-family: 'Pokemon Solid', cursive;;
@@ -30,12 +34,12 @@ h1 {
     margin: 5px;
     padding: 10px 20px;
     border-radius: 5px;
-    background-color: #158e00;
+    background-color: #f46e00;
     color: white;
     font-weight: 600;
     font-family: 'Pokemon Solid', sans-serif; /* Pokemon font style */
-    border: 3px solid #0b5e00;
-    box-shadow: 0 4px #0b5e00;
+    border: 3px solid #b34700;
+    box-shadow: 0 4px #b34700;
     text-transform: uppercase;
     letter-spacing: 1px;
     transition: all 0.1s ease-in-out;
@@ -100,9 +104,9 @@ h1 {
 
 .poke-stats p {
     font-weight: 500;
-    background-color:  #158e00;
-    border: 3px solid #0b5e00;
-    box-shadow: 0 4px #0b5e00;
+    background-color:  #f46e00;
+    border: 3px solid #b34700;
+    box-shadow: 0 4px #b34700;
     text-align: center;
     border-radius: 5px;
     color: #000;
