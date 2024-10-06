@@ -307,7 +307,7 @@ header {
     }
 }
 
-@media (min-width: 1368px) {
+@media (min-width: 1550px) {
     .hamburger,
     .hamburger::before,
     .hamburger::after {
@@ -444,7 +444,7 @@ header {
     }
 }
 
-@media (min-width: 1368px) {
+@media (min-width: 1550px) {
     .section-title-services {
         font-size: 4rem;
     }
@@ -523,7 +523,7 @@ header {
     
 }
 
-@media (min-width: 1368px) {
+@media (min-width: 1550px) {
     .about-me {
         position: relative;
         display: grid;
@@ -623,7 +623,7 @@ header {
     opacity: .4;
 }
 
-@media (min-width: 1368px) {
+@media (min-width: 1550px) {
     .my-work {
         padding: 5em 10em 7em;
     }
@@ -681,7 +681,7 @@ header {
     padding: .5em;
 }
 
-@media (min-width: 1368px) {
+@media (min-width: 1550px) {
     .footer {
         padding: 3em 0;
     }
