@@ -136,7 +136,7 @@ h3 { font-size: var(--fs-h3) }
 
 header {
     position: fixed;
-    top: 3px;
+    top: 0px;
     width: 100%;
     display: flex;
     justify-content: space-between;
@@ -307,6 +307,63 @@ header {
     }
 }
 
+@media (min-width: 1368px) {
+    .hamburger,
+    .hamburger::before,
+    .hamburger::after {
+        width: 3em;
+        height: 4px;
+    }
+    header {
+        padding: 2.5em;
+    }
+    .nav-toggle {
+        top: 3em;
+        right: 2.5em;
+    }
+    .logo {
+        max-width: 250px;
+    }
+    .intro {
+        width: 55vw;
+        height: 55vh;
+        display: grid;
+        margin: 5vh auto 0;
+        grid-column-gap: 1em;
+        grid-template-areas: 
+            "img title"
+            "img subtitle";
+        grid-template-columns: min-content max-content;
+    }
+
+    .intro-img {
+        grid-area: img;
+        max-height: 40vh;
+        position: relative;
+        z-index: 2;
+    }
+
+    .section-subtitle-intro {
+        font-size: 2em;
+        align-self: start;
+        grid-column: -1 / 1;
+        grid-row: 2;
+        text-align: right;
+        position: relative;
+        left: -1em;
+        width: calc(50vw + 1.5em);
+        
+    }
+
+    .section-title-intro {
+        font-size: 4em;
+        text-align: left;
+        padding: 1vh 0 0 1vw;
+    }
+    
+}
+
+
 
 
 /*  My services section  */
@@ -387,6 +444,35 @@ header {
     }
 }
 
+@media (min-width: 1368px) {
+    .section-title-services {
+        font-size: 4rem;
+    }
+
+    .section-title-services::after {
+        width: 5em;
+        height: 4px;
+    }
+
+    .service {
+        max-width: 36vw;
+        display: flex;
+        flex-wrap: wrap;
+    }
+
+    .service a {
+        margin: 1em;
+    }
+
+    .techs {
+        width: 6vw;
+    }
+
+    .btn {
+        font-size: 1.5em;
+    }
+}
+
 
 .about-me {
     box-shadow: -10px 8px 10px rgba(0, 0, 0, 0.5), 10px 8px 10px rgba(0, 0, 0, 0.5);
@@ -434,6 +520,47 @@ header {
         position: relative;
         z-index: 2;
     }
+    
+}
+
+@media (min-width: 1368px) {
+    .about-me {
+        position: relative;
+        display: grid;
+        grid-template-columns: 1fr 35vh;
+        grid-template-areas: 
+            "title img"
+            "subtitle img"
+            "text img";
+        grid-column-gap: 2em;
+        max-width: 60vw;
+        padding: 7em 2em;
+    }
+    
+    .section-title-about {
+        grid-area: title;
+        font-size: 4em;
+    }
+
+    .about-me-body {
+        font-size: 1.5em;
+    }
+    
+    .section-subtitle-about {
+        grid-column: 1 / -1;
+        grid-row: 2;
+        position: relative;
+        width: calc(100% + 1.7em);
+        padding-left: 1em;
+        padding-right: calc(310px + 4em);
+        font-size: 3em;
+    }
+    
+    .about-me-img {
+        grid-area: img;
+        position: relative;
+        z-index: 2;
+    }
 }
 
 /* My Work */
@@ -461,10 +588,10 @@ header {
 
 .portfolio-text {
     position: absolute;
-    bottom: 10px;  /* Altere conforme necessário */
-    left: 10px;    /* Altere conforme necessário */
+    bottom: 10px;  
+    left: 10px;    
     color: var(--clr-dark);
-    background: rgba(0, 0, 0, 0.5);  /* Fundo semitransparente */
+    background: rgba(0, 0, 0, 0.5);
     padding: 5px 10px;
     font-size: 1.2rem;
     font-weight: var(--fw-bold);
@@ -494,6 +621,18 @@ header {
 .portfolio-item:focus .portfolio-img {
     transform: scale(1.2);
     opacity: .4;
+}
+
+@media (min-width: 1368px) {
+    .my-work {
+        padding: 5em 10em 7em;
+    }
+    .section-subtitle-work {
+        font-size: 2em;
+    }
+    .portfolio {
+        grid-template-columns: repeat(auto-fit, minmax(330px, 1fr));
+    }
 }
 
 
@@ -542,6 +681,24 @@ header {
     padding: .5em;
 }
 
+@media (min-width: 1368px) {
+    .footer {
+        padding: 3em 0;
+    }
+    .footer a {
+        font-size: 1.5em;
+    }
+    .social-list {
+        margin: 3em 0 0;
+    }
+    .social-list-item {
+        margin: 0 1em;
+    }
+    .social-list-link {
+        padding: 1em;
+    }
+}
+
 /* portfolio item individual*/
 
 .portfolio-item-individual {
@@ -554,4 +711,4 @@ header {
     max-width: 600px;
     margin-left: auto;
     margin-right: auto;
-} 
+}
