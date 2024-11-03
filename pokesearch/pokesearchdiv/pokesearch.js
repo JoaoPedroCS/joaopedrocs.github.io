@@ -72,5 +72,3 @@ const renderPokemon = (name, id, height, weight, base_experience, front_default,
 
     statsDiv.innerHTML = statsHTML;
 }
-
-
