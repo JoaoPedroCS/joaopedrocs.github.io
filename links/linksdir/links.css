@@ -1,3 +1,8 @@
 .portfolio-item-individual {
     margin-top: 10vh;
 }
+
+.image-row {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+}
