@@ -5,10 +5,10 @@
     margin-bottom: 30px;
     margin-top: 40px;
     color: #f46e00;
-    font-family: 'Pokemon Solid', cursive;
+    font-family: 'Pokemon Solid', sans-serif;
 }
 .container {
-    font-family: 'Pokemon Solid', cursive;;
+    font-family: 'Pokemon Solid', sans-serif;;
     display: flex;
     flex-direction: column;
     align-items: center;
