@@ -196,3 +196,9 @@
 .type-unknown {
     background-color: #68a090;
 }
+
+@media (max-width: 500px) {
+    .container {
+        width: 90vw;
+    }
+}
