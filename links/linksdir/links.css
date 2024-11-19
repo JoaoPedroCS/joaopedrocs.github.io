@@ -6,3 +6,15 @@
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
 }
+
+.titles {
+    padding-left: 7%;
+}
+
+h2 {
+    font-size: 3rem;
+}
+
+p {
+    font-size: 1.3rem;
+}
