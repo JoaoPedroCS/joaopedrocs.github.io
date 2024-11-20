@@ -18,3 +18,9 @@ h2 {
 p {
     font-size: 1.3rem;
 }
+
+@media (max-width: 600px) {
+    .titles {
+        padding-left: 0;
+    }
+}
